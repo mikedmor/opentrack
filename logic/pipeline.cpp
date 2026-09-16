@@ -187,6 +187,8 @@ Pose_ reltrans::apply_neck(const rmat& R, int nz, bool disable_tz) const
 pipeline::pipeline(const Mappings& m, const runtime_libraries& libs, TrackLogger& logger) :
     m(m), libs(libs), logger(logger)
 {
+    if (s.start_tracking_disabled)
+        b.set(f_enabled_p, false);
 }
 
 pipeline::~pipeline()

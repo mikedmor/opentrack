@@ -55,8 +55,8 @@ public:
 
         key_tuple(s.key_toggle1, [this](bool) { pipeline_.toggle_enabled(); }, true),
         key_tuple(s.key_toggle2, [this](bool) { pipeline_.toggle_enabled(); }, true),
-        key_tuple(s.key_toggle_press1, [this](bool x) { pipeline_.set_enabled(!x); }, false),
-        key_tuple(s.key_toggle_press2, [this](bool x) { pipeline_.set_enabled(!x); }, false),
+        key_tuple(s.key_toggle_press1, [this](bool x) { if (x && s.center_on_toggle_press) pipeline_.set_center(true); pipeline_.set_enabled(!x); }, false),
+        key_tuple(s.key_toggle_press2, [this](bool x) { if (x && s.center_on_toggle_press) pipeline_.set_center(true); pipeline_.set_enabled(!x); }, false),
 
         key_tuple(s.key_zero1, [this](bool) { pipeline_.toggle_zero(); }, true),
         key_tuple(s.key_zero2, [this](bool) { pipeline_.toggle_zero(); }, true),

@@ -76,6 +76,8 @@ struct OTR_LOGIC_EXPORT main_settings final
     value<bool> tray_start { b, "start-in-tray", false };
 
     value<bool> center_at_startup { b, "center-at-startup", true };
+    value<bool> start_tracking_disabled { b, "start-tracking-disabled", false };
+    value<bool> center_on_toggle_press { b, "center-on-toggle-press", false };
     value<bool> auto_center { b, "auto-center", false };
     value<double> auto_center_speed { b, "auto-center-speed", 0.06 };
     value<double> auto_center_deadzone { b, "auto-center-deadzone", 1.0 };
