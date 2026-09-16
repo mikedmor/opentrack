@@ -263,14 +263,41 @@ bool KeybindingWorker::run_keyboard_nolock()
             continue;
         keystate[idx] = held;
 
+        auto emit_modifier = [&](int canonical_keycode, bool ctrl, bool alt, bool shift) {
+            Key key;
+            key.held = held;
+            key.keycode = canonical_keycode;
+            key.ctrl = ctrl;
+            key.alt = alt;
+            key.shift = shift;
+            emit_key(key);
+        };
+
         switch (idx)
         {
+        // modifiers can themselves be bound: reported under the left-side DIK
+        // code (matching either side) with their own flag excluded, since here
+        // they're the trigger key, not an accompanying modifier.
         case DIK_LCONTROL:
         case DIK_RCONTROL:
+            emit_modifier(DIK_LCONTROL, false,
+                           keystate[DIK_LALT] | keystate[DIK_RALT],
+                           keystate[DIK_LSHIFT] | keystate[DIK_RSHIFT]);
+            break;
         case DIK_LSHIFT:
         case DIK_RSHIFT:
+            emit_modifier(DIK_LSHIFT,
+                           keystate[DIK_LCONTROL] | keystate[DIK_RCONTROL],
+                           keystate[DIK_LALT] | keystate[DIK_RALT],
+                           false);
+            break;
         case DIK_LALT:
         case DIK_RALT:
+            emit_modifier(DIK_LALT,
+                           keystate[DIK_LCONTROL] | keystate[DIK_RCONTROL],
+                           false,
+                           keystate[DIK_LSHIFT] | keystate[DIK_RSHIFT]);
+            break;
         case DIK_LWIN:
         case DIK_RWIN:
             break;
