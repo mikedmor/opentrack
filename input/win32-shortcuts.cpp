@@ -34,6 +34,9 @@ win_key const windows_key_mods[] {
 #endif
 
 const win_key windows_key_sequences[] {
+    { Qt::Key_Alt,                      DIK_LMENU,          VK_MENU,       },
+    { Qt::Key_Control,                  DIK_LCONTROL,       VK_CONTROL,    },
+    { Qt::Key_Shift,                    DIK_LSHIFT,         VK_SHIFT,      },
     { Qt::Key_F1,                       DIK_F1,             VK_F1,         },
     { Qt::Key_F2,                       DIK_F2,             VK_F2,         },
     { Qt::Key_F3,                       DIK_F3,             VK_F3,         },
