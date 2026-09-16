@@ -896,6 +896,38 @@
             </property>
            </widget>
           </item>
+          <item row="3" column="0">
+           <widget class="QCheckBox" name="start_tracking_disabled">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="toolTip">
+             <string>Tracking output starts paused, as if the "Toggle" key had already been pressed once. Use with "Toggle while held" to make holding that key enable tracking, instead of pause it.</string>
+            </property>
+            <property name="text">
+             <string>Start tracking disabled</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QCheckBox" name="center_on_toggle_press">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="toolTip">
+             <string>Recenter as soon as the "Toggle while held" key is pressed down.</string>
+            </property>
+            <property name="text">
+             <string>Center on "Toggle while held" press</string>
+            </property>
+           </widget>
+          </item>
           <item row="0" column="2">
            <widget class="QComboBox" name="cbox_centering">
             <property name="sizePolicy">

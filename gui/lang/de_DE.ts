@@ -206,6 +206,22 @@ Klicke „Kalibrierung löschen“, um jegliche Kalibrierungsdaten der zugehöri
         <translation>Zentrieren beim Start</translation>
     </message>
     <message>
+        <source>Tracking output starts paused, as if the &quot;Toggle&quot; key had already been pressed once. Use with &quot;Toggle while held&quot; to make holding that key enable tracking, instead of pause it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start tracking disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recenter as soon as the &quot;Toggle while held&quot; key is pressed down.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center on &quot;Toggle while held&quot; press</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Disabled</source>
         <translation>Abgeschaltet</translation>
     </message>
