@@ -56,7 +56,7 @@ if(OpenCV_FOUND AND ONNXRuntime_FOUND AND OpenMP_FOUND)
 
     if(WIN32)
         if(NOT opentrack-use-onnxruntime-avx-dispatch)
-            otr_install_lib("${ONNXRuntime_RUNTIME}" ".")
+            otr_install_lib("${ONNXRuntime_RUNTIME}" "${opentrack-libexec}")
         endif()
     endif()
     if(MSVC)
