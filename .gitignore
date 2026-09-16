@@ -1,6 +1,7 @@
 /build*/
 /build
 /build-*
+/dist/
 .DS_Store
 /sdk-paths-*.cmake
 /.idea/
